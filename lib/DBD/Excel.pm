@@ -99,14 +99,14 @@ sub connect($$@) {
                 _getColName($rhAttr->{xl_ignorecase}, 
                             $rhAttr->{xl_skiphidden}, 
                             $oWkS, 0, $MinCol, $MaxCol-$MinCol+1);
-=cmmt
-        my $HidCols=0;
-        if $rhAttr->{xl_skiphidden} {
-            for (my $i = $MinCol, $HidCols = 0; $i <= $MaxCol; $i++) {
-                $HidCols++ if $oWkS->{ColWidth}[$i] && $oWkS->{ColWidth}[$i] == 0;
-            };
-        }
-=cut
+
+        #my $HidCols=0;
+        #if $rhAttr->{xl_skiphidden} {
+        #    for (my $i = $MinCol, $HidCols = 0; $i <= $MaxCol; $i++) {
+        #        $HidCols++ if $oWkS->{ColWidth}[$i] && $oWkS->{ColWidth}[$i] == 0;
+        #    };
+        #}
+
         my $sTblN = ($rhAttr->{xl_ignorecase})? uc($oWkS->{Name}): $oWkS->{Name};
         $hTbl{$sTblN} = {
                     xl_t_vtbl        => undef,
