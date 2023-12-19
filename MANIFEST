@@ -3,7 +3,7 @@ Excel.pm
 Makefile.PL
 MANIFEST
 README
-test.pl
+t/00-load.t
 sample/README
 sample/dbdtest.xls
 sample/testj.pl
