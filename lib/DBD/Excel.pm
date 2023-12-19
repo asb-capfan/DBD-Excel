@@ -1107,14 +1107,6 @@ There are too many TODO things. So I can't determind what is BUG. :-)
 
 Kawai Takanori (Hippo2000) kwitknr@cpan.org
 
-  Homepage:
-    http://member.nifty.ne.jp/hippo2000/            (Japanese)
-    http://member.nifty.ne.jp/hippo2000/index_e.htm (English)
-
-  Wiki:
-    http://www.hippo2000.net/cgi-bin/KbWiki/KbWiki.pl  (Japanese)
-    http://www.hippo2000.net/cgi-bin/KbWikiE/KbWiki.pl (English)
-
 =head1 SEE ALSO
 
 DBI, Spreadsheet::WriteExcel, Spreadsheet::ParseExcel, SQL::Statement
