@@ -1,5 +1,5 @@
 Changes
-Excel.pm
+lib/DBD/Excel.pm
 Makefile.PL
 MANIFEST
 README

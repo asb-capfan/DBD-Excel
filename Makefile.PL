@@ -4,7 +4,7 @@ use DBI::DBD;
 use ExtUtils::MakeMaker;
 ExtUtils::MakeMaker::WriteMakefile(
         'NAME'         => 'DBD::Excel',
-        'VERSION_FROM' => 'Excel.pm',
+        'VERSION_FROM' => 'lib/DBD/Excel.pm',
         'INC'          => $DBI_INC_DIR,
         'dist'         => { 'SUFFIX' => '.gz',
                             'COMPRESS' => 'gzip -9f' },
