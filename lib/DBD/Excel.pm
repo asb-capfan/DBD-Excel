@@ -909,28 +909,28 @@ This is still B<alpha version>.
 
 This is still B<alpha version>.
 
-The DBD::Excel module is a DBI driver.
+The DBD::Excel module is a L<DBI> driver.
 The module is based on these modules:
 
 =over 4
 
 =item *
-Spreadsheet::ParseExcel
+L<Spreadsheet::ParseExcel>
 
 reads Excel files.
 
 =item *
-Spreadsheet::WriteExcel
+L<Spreadsheet::WriteExcel>
 
 writes Excel files.
 
 =item *
-SQL::Statement
+L<SQL::Statement>
 
 a simple SQL engine.
 
 =item *
-DBI
+L<DBI>
 
 Of course. :-)
 
@@ -962,7 +962,7 @@ For more information please refer sample/tex.pl included in this distribution.
 
 =head2 Metadata
 
-The following attributes are handled by DBI itself and not by DBD::Excel,
+The following attributes are handled by L<DBI> itself and not by DBD::Excel,
 thus they all work like expected:
 
     Active
@@ -975,7 +975,7 @@ thus they all work like expected:
     RaiseError
     Warn                   (Not used)
 
-The following DBI attributes are handled by DBD::Excel:
+The following L<DBI> attributes are handled by DBD::Excel:
 
 =over 4
 
@@ -1013,7 +1013,7 @@ These attributes and methods are not supported:
     LongReadLen
     LongTruncOk
 
-Additional to the DBI attributes, you can use the following dbh
+Additional to the L<DBI> attributes, you can use the following dbh
 attribute:
 
 =over 4
@@ -1040,7 +1040,7 @@ I<See sample/thidden.pl>.
 =item xl_ignorecase
 
 set casesensitive or not about table name and columns. 
-Default is sensitive (maybe as SQL::Statement).
+Default is sensitive (maybe as L<SQL::Statement>).
 I<See sample/thidden.pl>.
 
 =back
@@ -1087,7 +1087,7 @@ The current version not support date/time and text formating.
 =item Joins
 
 The current version of the module works with single table SELECT's
-only, although the basic design of the SQL::Statement module allows
+only, although the basic design of the L<SQL::Statement> module allows
 joins and the likes.
 
 =back
@@ -1109,7 +1109,7 @@ Kawai Takanori (Hippo2000) kwitknr@cpan.org
 
 =head1 SEE ALSO
 
-DBI, Spreadsheet::WriteExcel, Spreadsheet::ParseExcel, SQL::Statement
+L<DBI>, L<Spreadsheet::WriteExcel>, L<Spreadsheet::ParseExcel>, L<SQL::Statement>
 
 
 =head1 COPYRIGHT
