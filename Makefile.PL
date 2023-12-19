@@ -13,7 +13,7 @@ ExtUtils::MakeMaker::WriteMakefile(
                             Spreadsheet::ParseExcel => 0.22,
                             Spreadsheet::WriteExcel => 0.31,
                             DBI                     => 1,
-                            SQL::Statement          => ,
+                            SQL::Statement          => 1,
                             }, # e.g., Module::Name => 1.1
     );
 
