@@ -897,13 +897,11 @@ This is still B<alpha version>.
 =head1 SYNOPSIS
 
     use DBI;
-    $hDb = DBI->connect("DBI:Excel:file=test.xls")
-        or die "Cannot connect: " . $DBI::errstr;
-    $hSt = $hDb->prepare("CREATE TABLE a (id INTEGER, name CHAR(10))")
-        or die "Cannot prepare: " . $hDb->errstr();
-    $hSt->execute() or die "Cannot execute: " . $hSt->errstr();
-    $hSt->finish();
-    $hDb->disconnect();
+    my $dbh = DBI->connect("DBI:Excel:file=test.xls") or die "Cannot connect: " . $DBI::errstr;
+    my $sth = $dbh->prepare("CREATE TABLE a (id INTEGER, name CHAR(10))") or die "Cannot prepare: " . $dbh->errstr();
+    $sth->execute() or die "Cannot execute: " . $sth->errstr();
+    $sth->finish();
+    $dbh->disconnect();
 
 =head1 DESCRIPTION
 
@@ -939,26 +937,25 @@ Of course. :-)
 This module assumes TABLE = Worksheet.
 The contents of first row of each worksheet as column name.
 
-Adding that, this module accept temporary table definition at "connect" method 
-with "xl_vtbl".
+Adding that, this module accepts a temporary table definition in the C<connect> method with the C<xl_vtbl> option.
 
-ex.
-    my $hDb = DBI->connect(
-            "DBI:Excel:file=dbdtest.xls", undef, undef, 
-                        {xl_vtbl => 
-                            {TESTV => 
-                                {
-                                    sheetName => 'TEST_V',
-                                    ttlRow    => 5,
-                                    startCol  => 1,
-                                    colCnt    => 4,
-                                    datRow    => 6,
-                                    datLmt    => 4,
-                                }
-                            }
-                        });
+Example:
 
-For more information please refer sample/tex.pl included in this distribution.
+    my %options = (
+        xl_vtbl => { # define temporary tables here
+            TESTV => { # temporary table name => options
+                sheetName => 'TEST_V', # actual Excel sheet name
+                ttlRow    => 5,
+                startCol  => 1,
+                colCnt    => 4,
+                datRow    => 6,
+                datLmt    => 4,
+            }
+        }
+    );
+    my $dbh = DBI->connect("DBI:Excel:file=dbdtest.xls", undef, undef, \%options);
+
+For more information please refer to the file sample/tex.pl which is included in this distribution.
 
 =head2 Metadata
 
@@ -989,20 +986,20 @@ Works
 
 =item NUM_OF_FIELDS
 
-Valid after C<$hSt-E<gt>execute>
+Valid after C<$sth-E<gt>execute>
 
 =item NUM_OF_PARAMS
 
-Valid after C<$hSt-E<gt>prepare>
+Valid after C<$sth-E<gt>prepare>
 
 =item NAME
 
-Valid after C<$hSt-E<gt>execute>; undef for Non-Select statements.
+Valid after C<$sth-E<gt>execute>; C<undef> for Non-Select statements.
 
 =item NULLABLE
 
 Not really working, always returns an array ref of one's.
-Valid after C<$hSt-E<gt>execute>; undef for Non-Select statements.
+Valid after C<$sth-E<gt>execute>; C<undef> for Non-Select statements.
 
 =back
 
@@ -1013,8 +1010,7 @@ These attributes and methods are not supported:
     LongReadLen
     LongTruncOk
 
-Additional to the L<DBI> attributes, you can use the following dbh
-attribute:
+Additional to the L<DBI> attributes, you can use the following attributes:
 
 =over 4
 
@@ -1053,21 +1049,20 @@ I<See sample/thidden.pl>.
 =item data_sources
 
 The C<data_sources> method returns a list of '*.xls' files of the current
-directory in the form "DBI:Excel:xl_dir=$dirname".
+directory in the form C<"DBI:Excel:xl_dir=$dirname">.
 
 If you want to read the subdirectories of another directory, use
 
-    my($hDr) = DBI->install_driver("Excel");
-    my(@list) = $hDr->data_sources( 
-                    { xl_dir => '/usr/local/xl_data' } );
+    my($drh) = DBI->install_driver("Excel");
+    my(@list) = $drh->data_sources( { xl_dir => '/usr/local/xl_data' } );
 
 =item list_tables
 
-This method returns a list of sheet names contained in the $hDb->{file}.
+This method returns a list of sheet names contained in the C<$dbh->{file}>.
 Example:
 
-    my $hDb = DBI->connect("DBI:Excel:file=test.xls");
-    my @list = $hDb->func('list_tables');
+    my $dbh = DBI->connect("DBI:Excel:file=test.xls");
+    my @list = $dbh->func('list_tables');
 
 =back
 
