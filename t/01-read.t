@@ -28,7 +28,6 @@ while (my $row = $sth->fetchrow_hashref) {
     # option: check actual record content
 }
 
-# Verbindung schließen
 $dbh->disconnect;
 
 is($record_count, $expected_records, 'Number of records is correct');
