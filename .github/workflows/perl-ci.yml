@@ -21,5 +21,8 @@ jobs:
       - name: Install developer dependencies
         run: |
           cpanm Test::More
+      - name: run Makefile to generate MYMETA file
+        run: |
+          perl Makefile.PL
       - run: cpanm --installdeps .
       - run: prove -lv t
