@@ -10,6 +10,7 @@ ExtUtils::MakeMaker::WriteMakefile(
                             'COMPRESS' => 'gzip -9f' },
         'realclean'    => {'*.xsi'},
         'PREREQ_PM'    => {
+            'ExtUtils::MakeMaker' => 6.64,
             'Spreadsheet::ParseExcel' => 0.22,
             'Spreadsheet::WriteExcel' => 0.31,
             'DBI'                     => 1,
