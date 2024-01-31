@@ -18,5 +18,8 @@ jobs:
       - uses: shogo82148/actions-setup-perl@v1
         with:
           perl-version: '5.34'
+      - name: Install developer dependencies
+        run: |
+          cpanm Test::More
       - run: cpanm --installdeps .
       - run: prove -lv t
