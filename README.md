@@ -1,5 +1,7 @@
 # DBD::Excel
 
+[![Perl CI](https://github.com/asb-capfan/DBD-Excel/actions/workflows/perl-ci.yml/badge.svg)](https://github.com/asb-capfan/DBD-Excel/actions/workflows/perl-ci.yml)
+
 A class for DBI drivers that act on Excel files.
 
 # Description
