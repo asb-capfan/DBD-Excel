@@ -20,7 +20,7 @@ jobs:
           perl-version: '5.34'
       - name: Install developer dependencies
         run: |
-          cpanm Test::More
+          cpanm Test::More DBI
       - name: run Makefile to generate MYMETA file
         run: |
           perl Makefile.PL
