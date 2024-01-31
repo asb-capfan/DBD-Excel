@@ -10,11 +10,14 @@ ExtUtils::MakeMaker::WriteMakefile(
                             'COMPRESS' => 'gzip -9f' },
         'realclean'    => {'*.xsi'},
         'PREREQ_PM'    => {
-                            Spreadsheet::ParseExcel => 0.22,
-                            Spreadsheet::WriteExcel => 0.31,
-                            DBI                     => 1,
-                            SQL::Statement          => 1,
-                            }, # e.g., Module::Name => 1.1
+            'Spreadsheet::ParseExcel' => 0.22,
+            'Spreadsheet::WriteExcel' => 0.31,
+            'DBI'                     => 1,
+            'SQL::Statement'          => 1,
+        }, # e.g., Module::Name => 1.1
+        'TEST_REQUIRES' => {
+            'Test::More' => 1.3,
+        },
     );
 
 package MY;
