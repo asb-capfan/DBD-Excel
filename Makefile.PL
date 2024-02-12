@@ -10,6 +10,11 @@ ExtUtils::MakeMaker::WriteMakefile(
                             'COMPRESS' => 'gzip -9f' },
         'realclean'    => {'*.xsi'},
         'LICENSE'      => 'perl',
+        'META_MERGE'     => {
+            'resources' => {
+                'repository' => 'https://github.com/asb-capfan/DBD-Excel',
+            },
+        },
         'PREREQ_PM'    => {
             'ExtUtils::MakeMaker' => 6.64,
             'Spreadsheet::ParseExcel' => 0.22,
