@@ -4,6 +4,10 @@ Makefile.PL
 MANIFEST
 README.md
 t/00-load.t
+t/01-read.t
+t/02-write-and-delete.t
+t/data/02-test-data.xls
+t/data/test-data.xls
 sample/README
 sample/dbdtest.xls
 sample/testj.pl
