@@ -935,7 +935,7 @@ Of course. :-)
 =back
 
 This module assumes TABLE = Worksheet.
-The contents of first row of each worksheet as column name.
+The contents of the first row of each worksheet are used as column name.
 
 Adding that, this module accepts a temporary table definition in the C<connect> method with the C<xl_vtbl> option.
 
@@ -1094,7 +1094,7 @@ joins and the likes.
 
 =item *
 
-There are too many TODO things. So I can't determind what is BUG. :-)
+There are too many TODO things. So I can't determine what is BUG. :-)
 
 =back
 
