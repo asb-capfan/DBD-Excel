@@ -1100,7 +1100,8 @@ There are too many TODO things. So I can't determine what is BUG. :-)
 
 =head1 AUTHOR
 
-Kawai Takanori (Hippo2000) kwitknr@cpan.org
+Kawai Takanori (Hippo2000) originally created this module. 
+Currently maintained by Alexander Becker.
 
 =head1 SEE ALSO
 
