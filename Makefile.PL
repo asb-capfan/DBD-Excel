@@ -9,6 +9,7 @@ ExtUtils::MakeMaker::WriteMakefile(
         'dist'         => { 'SUFFIX' => '.gz',
                             'COMPRESS' => 'gzip -9f' },
         'realclean'    => {'*.xsi'},
+        'LICENSE'      => 'perl',
         'PREREQ_PM'    => {
             'ExtUtils::MakeMaker' => 6.64,
             'Spreadsheet::ParseExcel' => 0.22,
