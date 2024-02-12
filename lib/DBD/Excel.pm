@@ -25,7 +25,7 @@ package DBD::Excel;
 use vars qw(@ISA $VERSION $hDr $err $errstr $sqlstate);
 @ISA = qw(DynaLoader);
 
-$VERSION = '0.06';
+$VERSION = '0.07';
 
 $err = 0;           # holds error code   for DBI::err
 $errstr = "";       # holds error string for DBI::errstr
